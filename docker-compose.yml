@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  client:
+    build:
+      context: ./react_frontend
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./react_frontend:/app
+      - /app/node_modules
