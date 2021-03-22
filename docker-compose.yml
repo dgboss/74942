@@ -1,6 +1,25 @@
 version: '3.8'
 
 services:
+  api:
+    build:
+      context: ./flask_backend
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:5000 app:app
+    ports:
+      - "5000:5000"
+    environment:
+      MONGODB_HOST: mongodb
+      MONGODB_USERNAME: "apiuser"
+      MONGODB_PASSWORD: "apipassword"
+    volumes:
+      - appdata:/var/www
+    depends_on:
+      - mongodb
+    networks:
+      - react-flask
+      - flask-mongo
+
   client:
     build:
       context: ./react_frontend
@@ -11,3 +30,33 @@ services:
     volumes:
       - ./react_frontend:/app
       - /app/node_modules
+
+  mongodb:
+    container_name: mongo
+    image: mongo:4.4.0
+    restart: always
+    command: mongod --auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "admin"
+      MONGO_INITDB_ROOT_PASSWORD: "74942"
+      MONGO_INITDB_DATABASE: 74942app
+      MONGODB_DATA_DIR: /data/db
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - mongodbdata:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - flask-mongo
+
+networks:
+  react-flask:
+    driver: bridge
+  flask-mongo:
+    driver: bridge
+
+volumes:
+  mongodbdata:
+    driver: local
+  appdata:
+    driver: local
