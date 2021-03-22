@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContentContainer /> should render initial layout 1`] = `
+Array [
+  <WithStyles(ForwardRef(Container))>
+    <WithStyles(ForwardRef(Paper))
+      className="makeStyles-paper-3"
+    >
+      <WithStyles(ForwardRef(Typography))
+        className="makeStyles-title-4"
+        id="content-container_title"
+        variant="h4"
+      >
+        Welcome to the Health Authority Area Locator for British Columbia
+      </WithStyles(ForwardRef(Typography))>
+      <WithStyles(ForwardRef(Typography))
+        className="makeStyles-description-2"
+        id="content-container_description"
+      >
+        Please enter a latitude and longitude and click submit to find the name of your Community Health Service Area.
+      </WithStyles(ForwardRef(Typography))>
+      <FormComponent
+        resultHandler={[Function]}
+      />
+      
+    </WithStyles(ForwardRef(Paper))>
+  </WithStyles(ForwardRef(Container))>,
+]
+`;

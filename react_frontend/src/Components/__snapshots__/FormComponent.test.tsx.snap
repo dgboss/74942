@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormComponent /> should render initial layout 1`] = `
+Array [
+  <WithStyles(ForwardRef(Container))>
+    <form
+      autoComplete="off"
+      className="makeStyles-form-2"
+      id="form-component_form"
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <div>
+        <WithStyles(ForwardRef(TextField))
+          error={false}
+          helperText=""
+          id="latitude-input"
+          label="Latitude"
+          onChange={[Function]}
+          value=""
+        />
+      </div>
+      <div>
+        <WithStyles(ForwardRef(TextField))
+          error={false}
+          helperText=""
+          id="longitude-input"
+          label="Longitude"
+          onChange={[Function]}
+          value=""
+        />
+      </div>
+      <WithStyles(ForwardRef(Button))
+        className="makeStyles-button-1"
+        color="primary"
+        type="submit"
+        variant="contained"
+      >
+        Submit
+      </WithStyles(ForwardRef(Button))>
+      <WithStyles(ForwardRef(Button))
+        className="makeStyles-button-1"
+        onClick={[Function]}
+        variant="contained"
+      >
+        Clear
+      </WithStyles(ForwardRef(Button))>
+    </form>
+  </WithStyles(ForwardRef(Container))>,
+]
+`;
