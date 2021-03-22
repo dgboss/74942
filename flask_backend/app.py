@@ -19,16 +19,12 @@ class ServiceAreaApiResult(db.Document):
 
 def insert_service_area_result(result):
     document = ServiceAreaApiResult(success=result)
-    print(document)
     document.save()
 
 @app.route("/api", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        print(request.json)
         success = request.json["result"]
-        print('Are we succesful?')
-        print(success)
         insert_service_area_result(success)
     
     # Get a count of all records, success and failures
