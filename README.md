@@ -2,7 +2,7 @@
 
 This application has three components:
 1. A React based frontend
-2. A MongoDB database
+2. A MongoDB database with a persistent volume
 3. A Flask based backend
 
 To run the application:
@@ -11,7 +11,7 @@ To run the application:
 3. Run locally using docker with the following command: `docker-compose up -d`
 
 After running this command, the frontend application can be accessed in a web browser at http://localhost:3000.
-The backend application is running at http://localhost:5000, but the sole endpoint, `/api` is only accessible from localhost:3000.
+The backend application is running at http://localhost:5000 with one endpoint `/api`.
 
 Caution: This application is currently configured to be run in a development setting. The application should not be deployed to a production environment as database names, usernames and passwords are contained within this repository to ease deployment in a development environment.
 
