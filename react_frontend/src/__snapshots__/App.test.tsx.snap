@@ -294,7 +294,9 @@ Array [
       }
     }
   >
-    <ContentContainer />
+    <ContentContainer
+      data-testid="app-content_container"
+    />
   </ThemeProvider>,
 ]
 `;
