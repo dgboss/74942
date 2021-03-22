@@ -7,7 +7,7 @@ from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 
 app = Flask(__name__)
-cors = CORS(app, resource={r"/api": {"origins": "*"}})
+cors = CORS(app, resource={r"/api": {"origins": "localhost:3000"}})
 app.config.from_pyfile('config.py')
 
 db = MongoEngine()

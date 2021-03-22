@@ -5,10 +5,13 @@ This application has three components:
 2. A MongoDB database
 3. A Flask based backend
 
-The application can be run locally using docker with the following command: `docker-compose up -d`
+To run the application:
+1. Clone the repository from https://github.com/dgboss/74942
+2. Open a command prompt to the root of the application.
+3. Run locally using docker with the following command: `docker-compose up -d`
 
 After running this command, the frontend application can be accessed in a web browser at http://localhost:3000.
-The backend application is running at http://localhost:5000.
+The backend application is running at http://localhost:5000, but the sole endpoint, `/api` is only accessible from localhost:3000.
 
 Caution: This application is currently configured to be run in a development setting. The application should not be deployed to a production environment as database names, usernames and passwords are contained within this repository to ease deployment in a development environment.
 
@@ -22,10 +25,6 @@ Instructions for User Story 3:
 7. Display a count of the collection: `collection.count()`
 8. To quit the database connection: `quit()`
 9. To exit the shell: `exit`
-
-Alternative instructions for User Story 3:
-The web server /api endpoint returns a count of the number of requests users of the frontend website have made in response to all GET and POST requests.
-To view the current count, open a browser and go to http://localhost:5000/api
 
 Frontend Unit Tests
 1. Open a command prompt and go to the `./react_frontend` directory
